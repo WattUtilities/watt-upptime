@@ -34,7 +34,7 @@
     "timeMonth": 912,
     "timeYear": 912,
     "dailyMinutesDown": {
-      "2024-06-25": 3
+      "2024-06-25": 13
     }
   },
   {
@@ -71,6 +71,24 @@
     "timeWeek": 816,
     "timeMonth": 816,
     "timeYear": 816,
+    "dailyMinutesDown": {}
+  },
+  {
+    "name": "Utility Preference Services",
+    "url": "https://www.utilitypreferenceservices.co.uk/",
+    "icon": "https://icons.duckduckgo.com/ip3/www.utilitypreferenceservices.co.uk.ico",
+    "slug": "utility-preference-services",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 935,
+    "timeDay": 935,
+    "timeWeek": 935,
+    "timeMonth": 935,
+    "timeYear": 935,
     "dailyMinutesDown": {}
   }
 ]
