@@ -4,7 +4,7 @@
     "url": "https://watt.co.uk",
     "icon": "https://icons.duckduckgo.com/ip3/watt.co.uk.ico",
     "slug": "watt-main-site",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
@@ -15,7 +15,9 @@
     "timeWeek": 2467,
     "timeMonth": 2696,
     "timeYear": 2696,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2024-07-23": 0
+    }
   },
   {
     "name": "Watt CRM",
@@ -23,11 +25,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/crm.watt.co.uk.ico",
     "slug": "watt-crm",
     "status": "up",
-    "uptime": "96.24%",
+    "uptime": "96.28%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "96.24%",
-    "uptimeYear": "96.24%",
+    "uptimeMonth": "96.28%",
+    "uptimeYear": "96.28%",
     "time": 949,
     "timeDay": 934,
     "timeWeek": 940,
