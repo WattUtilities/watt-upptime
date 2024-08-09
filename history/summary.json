@@ -10,11 +10,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.75%",
     "uptimeYear": "99.83%",
-    "time": 2557,
-    "timeDay": 2167,
-    "timeWeek": 2411,
-    "timeMonth": 2395,
-    "timeYear": 2557,
+    "time": 2552,
+    "timeDay": 2364,
+    "timeWeek": 2444,
+    "timeMonth": 2394,
+    "timeYear": 2552,
     "dailyMinutesDown": {
       "2024-07-23": 108
     }
@@ -25,16 +25,16 @@
     "icon": "https://icons.duckduckgo.com/ip3/crm.watt.co.uk.ico",
     "slug": "watt-crm",
     "status": "up",
-    "uptime": "97.62%",
+    "uptime": "97.68%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "97.62%",
-    "time": 976,
-    "timeDay": 1387,
-    "timeWeek": 1000,
-    "timeMonth": 975,
-    "timeYear": 976,
+    "uptimeYear": "97.68%",
+    "time": 1014,
+    "timeDay": 2472,
+    "timeWeek": 1267,
+    "timeMonth": 1027,
+    "timeYear": 1014,
     "dailyMinutesDown": {
       "2024-06-26": 709,
       "2024-06-25": 781
@@ -51,11 +51,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 630,
-    "timeDay": 441,
-    "timeWeek": 508,
-    "timeMonth": 603,
-    "timeYear": 630,
+    "time": 624,
+    "timeDay": 421,
+    "timeWeek": 507,
+    "timeMonth": 597,
+    "timeYear": 624,
     "dailyMinutesDown": {}
   },
   {
@@ -69,11 +69,11 @@
     "uptimeWeek": "99.92%",
     "uptimeMonth": "99.98%",
     "uptimeYear": "99.99%",
-    "time": 648,
-    "timeDay": 668,
-    "timeWeek": 636,
-    "timeMonth": 627,
-    "timeYear": 648,
+    "time": 644,
+    "timeDay": 506,
+    "timeWeek": 632,
+    "timeMonth": 623,
+    "timeYear": 644,
     "dailyMinutesDown": {
       "2024-08-06": 8
     }
@@ -89,11 +89,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.98%",
     "uptimeYear": "99.99%",
-    "time": 223,
-    "timeDay": 326,
-    "timeWeek": 216,
-    "timeMonth": 211,
-    "timeYear": 223,
+    "time": 224,
+    "timeDay": 235,
+    "timeWeek": 226,
+    "timeMonth": 212,
+    "timeYear": 224,
     "dailyMinutesDown": {
       "2024-07-25": 7
     }
