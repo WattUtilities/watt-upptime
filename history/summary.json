@@ -10,11 +10,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.75%",
     "uptimeYear": "99.84%",
-    "time": 2550,
-    "timeDay": 2494,
-    "timeWeek": 2512,
-    "timeMonth": 2401,
-    "timeYear": 2550,
+    "time": 2562,
+    "timeDay": 3049,
+    "timeWeek": 2520,
+    "timeMonth": 2421,
+    "timeYear": 2562,
     "dailyMinutesDown": {
       "2024-07-23": 108
     }
@@ -25,15 +25,15 @@
     "icon": "https://icons.duckduckgo.com/ip3/crm.watt.co.uk.ico",
     "slug": "watt-crm",
     "status": "up",
-    "uptime": "97.78%",
+    "uptime": "97.82%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "97.78%",
+    "uptimeYear": "97.82%",
     "time": 1082,
-    "timeDay": 1108,
-    "timeWeek": 1692,
-    "timeMonth": 1119,
+    "timeDay": 1099,
+    "timeWeek": 1687,
+    "timeMonth": 1118,
     "timeYear": 1082,
     "dailyMinutesDown": {
       "2024-06-26": 709,
@@ -51,11 +51,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 616,
-    "timeDay": 382,
-    "timeWeek": 487,
+    "time": 615,
+    "timeDay": 576,
+    "timeWeek": 474,
     "timeMonth": 587,
-    "timeYear": 616,
+    "timeYear": 615,
     "dailyMinutesDown": {}
   },
   {
@@ -69,11 +69,11 @@
     "uptimeWeek": "99.92%",
     "uptimeMonth": "99.98%",
     "uptimeYear": "99.99%",
-    "time": 641,
-    "timeDay": 588,
-    "timeWeek": 640,
-    "timeMonth": 620,
-    "timeYear": 641,
+    "time": 646,
+    "timeDay": 857,
+    "timeWeek": 646,
+    "timeMonth": 627,
+    "timeYear": 646,
     "dailyMinutesDown": {
       "2024-08-06": 8
     }
@@ -89,11 +89,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.98%",
     "uptimeYear": "99.99%",
-    "time": 225,
-    "timeDay": 291,
-    "timeWeek": 259,
-    "timeMonth": 215,
-    "timeYear": 225,
+    "time": 229,
+    "timeDay": 400,
+    "timeWeek": 264,
+    "timeMonth": 220,
+    "timeYear": 229,
     "dailyMinutesDown": {
       "2024-07-25": 7
     }
