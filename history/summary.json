@@ -10,11 +10,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.75%",
     "uptimeYear": "99.86%",
-    "time": 2503,
-    "timeDay": 1826,
-    "timeWeek": 2174,
-    "timeMonth": 2358,
-    "timeYear": 2503,
+    "time": 2497,
+    "timeDay": 2195,
+    "timeWeek": 2032,
+    "timeMonth": 2362,
+    "timeYear": 2497,
     "dailyMinutesDown": {
       "2024-07-23": 108
     }
@@ -25,16 +25,16 @@
     "icon": "https://icons.duckduckgo.com/ip3/crm.watt.co.uk.ico",
     "slug": "watt-crm",
     "status": "up",
-    "uptime": "98.07%",
+    "uptime": "98.10%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "98.07%",
-    "time": 1085,
-    "timeDay": 1003,
-    "timeWeek": 1108,
-    "timeMonth": 1157,
-    "timeYear": 1085,
+    "uptimeYear": "98.10%",
+    "time": 1080,
+    "timeDay": 850,
+    "timeWeek": 1066,
+    "timeMonth": 1151,
+    "timeYear": 1080,
     "dailyMinutesDown": {
       "2024-06-26": 709,
       "2024-06-25": 781
@@ -51,11 +51,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
-    "time": 599,
-    "timeDay": 542,
-    "timeWeek": 481,
-    "timeMonth": 571,
-    "timeYear": 599,
+    "time": 595,
+    "timeDay": 416,
+    "timeWeek": 455,
+    "timeMonth": 562,
+    "timeYear": 595,
     "dailyMinutesDown": {}
   },
   {
@@ -69,11 +69,11 @@
     "uptimeWeek": "100.00%",
     "uptimeMonth": "99.98%",
     "uptimeYear": "99.99%",
-    "time": 647,
-    "timeDay": 512,
-    "timeWeek": 689,
-    "timeMonth": 633,
-    "timeYear": 647,
+    "time": 651,
+    "timeDay": 825,
+    "timeWeek": 684,
+    "timeMonth": 643,
+    "timeYear": 651,
     "dailyMinutesDown": {
       "2024-08-06": 8
     }
@@ -91,8 +91,8 @@
     "uptimeYear": "99.99%",
     "time": 229,
     "timeDay": 224,
-    "timeWeek": 257,
-    "timeMonth": 224,
+    "timeWeek": 227,
+    "timeMonth": 227,
     "timeYear": 229,
     "dailyMinutesDown": {
       "2024-07-25": 7
