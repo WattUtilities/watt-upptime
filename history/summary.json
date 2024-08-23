@@ -8,12 +8,12 @@
     "uptime": "99.87%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
-    "uptimeMonth": "99.75%",
+    "uptimeMonth": "100.00%",
     "uptimeYear": "99.87%",
     "time": 2435,
     "timeDay": 1361,
     "timeWeek": 1827,
-    "timeMonth": 2251,
+    "timeMonth": 2259,
     "timeYear": 2435,
     "dailyMinutesDown": {
       "2024-07-23": 108
@@ -25,11 +25,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/crm.watt.co.uk.ico",
     "slug": "watt-crm",
     "status": "up",
-    "uptime": "98.23%",
+    "uptime": "98.25%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
-    "uptimeYear": "98.23%",
+    "uptimeYear": "98.25%",
     "time": 1076,
     "timeDay": 939,
     "timeWeek": 1005,
@@ -63,7 +63,7 @@
     "url": "https://mail.watt.co.uk",
     "icon": "https://icons.duckduckgo.com/ip3/mail.watt.co.uk.ico",
     "slug": "watt-mail",
-    "status": "up",
+    "status": "down",
     "uptime": "99.99%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
@@ -75,6 +75,7 @@
     "timeMonth": 625,
     "timeYear": 643,
     "dailyMinutesDown": {
+      "2024-08-23": 0,
       "2024-08-06": 8
     }
   },
