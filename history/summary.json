@@ -4,7 +4,7 @@
     "url": "https://watt.co.uk",
     "icon": "https://icons.duckduckgo.com/ip3/watt.co.uk.ico",
     "slug": "watt-main-site",
-    "status": "up",
+    "status": "down",
     "uptime": "99.96%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
@@ -16,6 +16,7 @@
     "timeMonth": 1447,
     "timeYear": 1612,
     "dailyMinutesDown": {
+      "2025-07-05": 0,
       "2024-11-25": 39,
       "2024-09-24": 57,
       "2024-07-23": 108
