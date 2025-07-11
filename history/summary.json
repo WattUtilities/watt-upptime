@@ -27,7 +27,7 @@
     "url": "https://crm.watt.co.uk",
     "icon": "https://icons.duckduckgo.com/ip3/crm.watt.co.uk.ico",
     "slug": "watt-crm",
-    "status": "up",
+    "status": "down",
     "uptime": "99.73%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
@@ -39,6 +39,7 @@
     "timeMonth": 671,
     "timeYear": 921,
     "dailyMinutesDown": {
+      "2025-07-11": 0,
       "2024-10-22": 13
     }
   },
@@ -66,7 +67,7 @@
     "icon": "https://icons.duckduckgo.com/ip3/mail.watt.co.uk.ico",
     "slug": "watt-mail",
     "status": "up",
-    "uptime": "98.87%",
+    "uptime": "98.88%",
     "uptimeDay": "100.00%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "88.85%",
