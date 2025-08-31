@@ -62,19 +62,19 @@
     "url": "https://app.watt.co.uk",
     "icon": "https://icons.duckduckgo.com/ip3/app.watt.co.uk.ico",
     "slug": "watt-app",
-    "status": "down",
+    "status": "up",
     "uptime": "100.00%",
-    "uptimeDay": "99.99%",
-    "uptimeWeek": "100.00%",
-    "uptimeMonth": "100.00%",
+    "uptimeDay": "99.48%",
+    "uptimeWeek": "99.93%",
+    "uptimeMonth": "99.98%",
     "uptimeYear": "100.00%",
-    "time": 565,
-    "timeDay": 456,
-    "timeWeek": 556,
-    "timeMonth": 615,
-    "timeYear": 563,
+    "time": 566,
+    "timeDay": 579,
+    "timeWeek": 574,
+    "timeMonth": 617,
+    "timeYear": 564,
     "dailyMinutesDown": {
-      "2025-08-31": 0
+      "2025-08-31": 7
     }
   },
   {
