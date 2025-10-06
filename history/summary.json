@@ -27,7 +27,7 @@
     "icon": "https://icons.duckduckgo.com/ip3/crm.watt.co.uk.ico",
     "slug": "watt-crm",
     "status": "up",
-    "uptime": "99.69%",
+    "uptime": "99.70%",
     "uptimeDay": "99.55%",
     "uptimeWeek": "99.94%",
     "uptimeMonth": "99.84%",
@@ -102,6 +102,24 @@
       "2025-09-01": 9,
       "2025-08-31": 8
     }
+  },
+  {
+    "name": "Watt Experian API",
+    "url": "https://crm.watt.co.uk/api/health/experian",
+    "icon": "https://icons.duckduckgo.com/ip3/crm.watt.co.uk.ico",
+    "slug": "watt-experian-api",
+    "status": "up",
+    "uptime": "100.00%",
+    "uptimeDay": "100.00%",
+    "uptimeWeek": "100.00%",
+    "uptimeMonth": "100.00%",
+    "uptimeYear": "100.00%",
+    "time": 1967,
+    "timeDay": 1967,
+    "timeWeek": 1967,
+    "timeMonth": 1967,
+    "timeYear": 1967,
+    "dailyMinutesDown": {}
   },
   {
     "name": "Watt Mail",
