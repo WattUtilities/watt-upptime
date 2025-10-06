@@ -15,11 +15,7 @@ jobs:
         with:
           token: ${{ secrets.GH_PAT || github.token }}
 
-      # Ensure we use the full (master) config for this run
-      - name: Use master config (full list incl. Experian)
-        run: cp .upptimerc.yml .upptimerc.yml
-
-      # 1) Run checks & update history/incidents
+      # Run checks & update history/incidents for the FULL config (.upptimerc.yml)
       - name: Check endpoint status
         uses: upptime/uptime-monitor@v1.37.0
         with:
@@ -28,7 +24,7 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
 
-      # 2) Build & publish the status website (MASTER ONLY)
+      # Build & publish the status website (MASTER ONLY)
       - name: Build status site
         uses: upptime/uptime-monitor@v1.37.0
         with:
