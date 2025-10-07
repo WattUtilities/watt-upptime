@@ -4,12 +4,18 @@ on:
     - cron: "0 */2 * * *"   # every 2 hours
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: upptime-pages
+  cancel-in-progress: false
+
 jobs:
   uptime:
     runs-on: ubuntu-latest
-    concurrency:
-      group: upptime
-      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
         with:
@@ -24,10 +30,25 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
 
-      # Build & publish the status website (MASTER ONLY)
+      # Build static site into ./site
       - name: Build status site
         uses: upptime/uptime-monitor@v1.37.0
         with:
           command: "site"
         env:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
+
+      # Configure GitHub Pages
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # Upload the generated site as a Pages artifact
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
