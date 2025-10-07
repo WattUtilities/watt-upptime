@@ -1,7 +1,7 @@
 name: Uptime (Master)
 on:
   schedule:
-    - cron: "0 */2 * * *"   # every 2 hours
+    - cron: "0 */2 * * *"
   workflow_dispatch:
 
 permissions:
@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 1) Generate data (history, summary) used by the site
+      # 1) Uptime checks (opens/closes issues, updates history)
       - name: Upptime update
         uses: upptime/uptime-monitor@v1.41.0
         with:
@@ -30,7 +30,31 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
 
-      # 2) Build the static site into ./site/status-page/__sapper__/export
+      # 2) Record response times (feeds graphs)
+      - name: Upptime response-time
+        uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "response-time"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}
+
+      # 3) Generate summary JSON consumed by the site
+      - name: Upptime summary
+        uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "summary"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}
+
+      # 4) Generate graphs
+      - name: Upptime graphs
+        uses: upptime/uptime-monitor@v1.41.0
+        with:
+          command: "graphs"
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || github.token }}
+
+      # 5) Build static site (outputs to ./site/status-page/__sapper__/export)
       - name: Upptime site build
         uses: upptime/uptime-monitor@v1.41.0
         with:
@@ -38,29 +62,23 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
 
-      # 3) DEBUG: list what was built so we know the path is right
-      - name: List site root
+      # (Optional) Show what was built so issues are obvious in logs
+      - name: List site output
         run: |
-          echo "== site =="
-          ls -lah site || true
-          echo "== site/status-page =="
-          ls -lah site/status-page || true
           echo "== export root =="
           ls -lah site/status-page/__sapper__/export || true
-          echo "== export tree (first 200 lines) =="
-          ls -R site/status-page/__sapper__/export | head -n 200 || true
+          echo "== expect to see: index.html, CNAME, api/, assets/ =="
+          ls -lah site/status-page/__sapper__/export/api 2>/dev/null || true
 
-      # 4) Configure Pages
+      # 6) Configure and deploy GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 5) Upload the actual static export (must contain index.html, api/, CNAME, assets/)
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: site/status-page/__sapper__/export
 
-      # 6) Deploy to Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
