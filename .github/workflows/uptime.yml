@@ -1,104 +1,33 @@
 name: Uptime (Master)
 on:
   schedule:
-    - cron: "0 */2 * * *"
+    - cron: "0 */2 * * *"   # every 2 hours
   workflow_dispatch:
-
-permissions:
-  contents: write       # commit history JSON, README, etc.
-  issues: write         # open/close incident issues
-  pull-requests: write  # maintenance PRs
-  pages: write          # deploy GitHub Pages
-  id-token: write       # OIDC for Pages
-
-concurrency:
-  group: upptime-pages
-  cancel-in-progress: false
 
 jobs:
   uptime:
     runs-on: ubuntu-latest
+    concurrency:
+      group: upptime
+      cancel-in-progress: false
     steps:
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_PAT || github.token }}
 
-      # --- Generate data used by the site ---
-      - name: Upptime update
-        uses: upptime/uptime-monitor@v1.41.0
+      # Run checks & update history/incidents for the FULL config (.upptimerc.yml)
+      - name: Check endpoint status
+        uses: upptime/uptime-monitor@v1.37.0
         with:
           command: "update"
         env:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
 
-      - name: Upptime response-time
-        uses: upptime/uptime-monitor@v1.41.0
-        with:
-          command: "response-time"
-        env:
-          GH_PAT: ${{ secrets.GH_PAT || github.token }}
-
-      - name: Upptime summary
-        uses: upptime/uptime-monitor@v1.41.0
-        with:
-          command: "summary"
-        env:
-          GH_PAT: ${{ secrets.GH_PAT || github.token }}
-
-      - name: Upptime graphs
-        uses: upptime/uptime-monitor@v1.41.0
-        with:
-          command: "graphs"
-        env:
-          GH_PAT: ${{ secrets.GH_PAT || github.token }}
-
-      # --- Build static site (Sapper export) ---
-      - name: Upptime site build
-        uses: upptime/uptime-monitor@v1.41.0
+      # Build & publish the status website (MASTER ONLY)
+      - name: Build status site
+        uses: upptime/uptime-monitor@v1.37.0
         with:
           command: "site"
         env:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
-
-      # --- Stage deploy folder: merge export + api + CNAME ---
-      - name: Prepare deploy folder
-        run: |
-          set -euxo pipefail
-          EXPORT_DIR="site/status-page/__sapper__/export"
-          DEPLOY_DIR="site-deploy"
-
-          rm -rf "$DEPLOY_DIR"
-          mkdir -p "$DEPLOY_DIR"
-
-          # Copy exported static site
-          if [ -d "$EXPORT_DIR" ]; then
-            cp -a "$EXPORT_DIR/." "$DEPLOY_DIR/"
-          fi
-
-          # Bring API JSON so the static site can read data without private API calls
-          if [ -d "api" ]; then
-            mkdir -p "$DEPLOY_DIR/api"
-            cp -a api/. "$DEPLOY_DIR/api/"
-          fi
-
-          # Preserve custom domain
-          if [ -f "CNAME" ]; then
-            cp CNAME "$DEPLOY_DIR/CNAME"
-          fi
-
-          echo "== deploy dir contents =="
-          ls -lah "$DEPLOY_DIR" || true
-          echo "== deploy/api =="
-          ls -lah "$DEPLOY_DIR/api" || true
-
-      # --- Deploy via GitHub Pages (Actions source) ---
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: site-deploy
-
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
