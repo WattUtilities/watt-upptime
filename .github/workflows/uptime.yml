@@ -5,11 +5,11 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write       # commit history files
-  issues: write         # open/close incident issues
-  pull-requests: write  # maintenance PRs if any
-  pages: write          # deploy GitHub Pages
-  id-token: write       # OIDC token for Pages
+  contents: write
+  issues: write
+  pull-requests: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: upptime-pages
@@ -21,34 +21,46 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # 1) Run checks & update history/incidents (creates data used by the site)
-      - name: Check endpoint status
-        uses: upptime/uptime-monitor@v1.37.0
+      # 1) Generate data (history, summary) used by the site
+      - name: Upptime update
+        uses: upptime/uptime-monitor@v1.41.0
         with:
           command: "update"
         env:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
 
-      # 2) Build static status site into ./site/status-page/__sapper__/export
-      - name: Build status site
-        uses: upptime/uptime-monitor@v1.37.0
+      # 2) Build the static site into ./site/status-page/__sapper__/export
+      - name: Upptime site build
+        uses: upptime/uptime-monitor@v1.41.0
         with:
           command: "site"
         env:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
 
-      # 3) Configure GitHub Pages
+      # 3) DEBUG: list what was built so we know the path is right
+      - name: List site root
+        run: |
+          echo "== site =="
+          ls -lah site || true
+          echo "== site/status-page =="
+          ls -lah site/status-page || true
+          echo "== export root =="
+          ls -lah site/status-page/__sapper__/export || true
+          echo "== export tree (first 200 lines) =="
+          ls -R site/status-page/__sapper__/export | head -n 200 || true
+
+      # 4) Configure Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # 4) Upload the generated export dir as the Pages artifact (IMPORTANT: correct path)
+      # 5) Upload the actual static export (must contain index.html, api/, CNAME, assets/)
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: site/status-page/__sapper__/export
 
-      # 5) Deploy to GitHub Pages
+      # 6) Deploy to Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
