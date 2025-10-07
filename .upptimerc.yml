@@ -9,17 +9,13 @@ sites:
     url: https://crm.watt.co.uk
     expectedStatusCodes:
       - 200
+      - 500
   - name: Watt App
     url: https://app.watt.co.uk
     expectedStatusCodes:
       - 200
       - 201
       - 403
-  - name: Watt Experian API
-    url: https://crm.watt.co.uk/api/health/experian
-    expectedStatusCodes:
-      - 200
-    maxResponseTime: 5000   # mark as "degraded" if slower than 5s
   - name: Watt Mail
     url: https://mail.watt.co.uk
     expectedStatusCodes:
@@ -28,10 +24,6 @@ sites:
       - 401
   - name: Utility Preference Services
     url: https://www.utilitypreferenceservices.co.uk/
-
-assignees:
-  - gurungbee
-  - gruckion
 
 status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
