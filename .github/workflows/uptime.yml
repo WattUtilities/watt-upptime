@@ -1,13 +1,15 @@
 name: Uptime (Master)
 on:
   schedule:
-    - cron: "0 */2 * * *"   # every 2 hours
+    - cron: "0 */2 * * *"
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write       # Upptime commits history files
+  issues: write         # Upptime opens/closes incident issues
+  pull-requests: write  # Upptime may open maintenance PRs
+  pages: write          # Deploy GitHub Pages
+  id-token: write       # OIDC for Pages deploy
 
 concurrency:
   group: upptime-pages
@@ -18,10 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.GH_PAT || github.token }}
 
-      # Run checks & update history/incidents for the FULL config (.upptimerc.yml)
       - name: Check endpoint status
         uses: upptime/uptime-monitor@v1.37.0
         with:
@@ -30,7 +29,6 @@ jobs:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
 
-      # Build static site into ./site
       - name: Build status site
         uses: upptime/uptime-monitor@v1.37.0
         with:
@@ -38,17 +36,14 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
 
-      # Configure GitHub Pages
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      # Upload the generated site as a Pages artifact
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
 
-      # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
