@@ -1,0 +1,9 @@
+# Node.js dependencies for local Upptime tooling
+node_modules/
+
+# Generated status-page build output (produced by `npm run site`)
+site/
+
+# Logs and OS cruft
+*.log
+.DS_Store

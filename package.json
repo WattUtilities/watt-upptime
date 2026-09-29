@@ -1,0 +1,18 @@
+{
+  "name": "watt-upptime",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local development tooling for the Watt Utilities Upptime uptime monitor and status page",
+  "scripts": {
+    "upptime": "./scripts/upptime.sh",
+    "uptime": "./scripts/upptime.sh update",
+    "response-time": "./scripts/upptime.sh response-time",
+    "graphs": "./scripts/upptime.sh graphs",
+    "readme": "./scripts/upptime.sh readme",
+    "site": "./scripts/upptime.sh site",
+    "site:preview": "npx --yes serve site/status-page/__sapper__/export"
+  },
+  "devDependencies": {
+    "@upptime/uptime-monitor": "1.43.9"
+  }
+}

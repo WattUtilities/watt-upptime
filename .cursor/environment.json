@@ -1,0 +1,8 @@
+{
+  "name": "Watt Upptime",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "user": "node",
+  "install": "npm ci"
+}
